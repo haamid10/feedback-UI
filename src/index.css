@@ -1,13 +1,71 @@
-body {
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #202142;
+}
+.container{
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
+header{
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-bottom: 30px;
+}
+.card{
+  background-color: #fff;
+  color: #333;
+  border-radius: 15px;
+  padding: 40px 50px;
+  position: relative;
+}
+.card h2{
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+.rating{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px 0 40px;
+}
+.rating li, .num-display{
+  position: relative;
+  background: #f4f4f4;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 19px;
+  border: 1px #eee solid;
+  transition: 1s;
+}
+.about-link{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-primary
+.about-link a{
+  color: #fff;
+}
+.about-link a:hover{
+  color: #ff6a95;
+}
+.about p{
+  margin: 10px ;
 }
