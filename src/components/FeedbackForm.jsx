@@ -1,5 +1,5 @@
 import Card from "./shared/Card"
-import RatingSelect from "./RatingSelect"
+import RatingSelect from "./RatingSelect" 
 import Button from "./Button"
 import {useState} from 'react'
 
@@ -11,7 +11,7 @@ const FeedbackForm = () => {
     if(text === ''){
       setBtnDisabled(true)
       setMessage(null)}
-      else if(text !== ''&&text.length<= 10){
+      else if(text !== ''&&text.trim().length<= 10){
         setMessage('please enter more than characteristics')
 
         setBtnDisabled(true)
@@ -26,7 +26,7 @@ const FeedbackForm = () => {
     <Card>
       <form action="">
         <h2>How would you rate your service with us?</h2>
-        <RatingSelect/> 
+        <RatingSelect select ={(rating)=>setRating(rating)}/> 
         <div className="input-group">
           <input type="text " placeholder="write the review" value={text} onChange={handleTextChange} />
           <Button type="submit"   isDisabled={btnDisabled}>Send</Button>
