@@ -6,7 +6,7 @@ const FeedbackItem = ({item,onDelete}) => {
     <Card >
        {/* <button onClick={reverse=true}></button> */}
     <div className="num-display">{item.rating}</div>
-    <button className='close' onClick={()=>onDelete(item.id)}><FaTimes/>
+    <button className='close' onClick={()=>onDelete(item.id)}><FaTimes color='purple'/>
      </button>
     <div className="text-display">{item.text}</div>
     {/* <button onClick={handleClick}>Click</button> */}

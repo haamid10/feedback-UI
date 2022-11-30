@@ -5,7 +5,8 @@ import FeedbackData from "./data/FeedbackData";
 function App() {
   const [feedback, setFeedback]= useState(FeedbackData)
   const deleteFeedback = (id) =>{
-   setFeedback(feedback.filter((item)=>item.id!==id))
+    if(window.confirm('Are you sure you went to Delete')){
+   setFeedback(feedback.filter((item)=>item.id!==id))}
   }
   return (
     < >
