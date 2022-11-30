@@ -41,7 +41,8 @@ const RatingSelect = () => {
        checked={selected==3} />
     <label htmlFor='num3'>3</label>
 
-    </li>  <li>
+    </li> 
+     <li>
       <input 
       type="radio" 
       name="rating"
@@ -49,27 +50,28 @@ const RatingSelect = () => {
       value='4' 
       onChange={handleChange}
        checked={selected==4} />
-    <label htmlFor='num4'>1</label>
+    <label htmlFor='num4'>4</label>
 
     </li>  <li>
       <input 
       type="radio" 
       name="rating"
-      id='num1'
-      value='1' 
+      id='num5'
+      value='5' 
       onChange={handleChange}
-       checked={selected==1} />
-    <label htmlFor='num1'>1</label>
+       checked={selected==5} />
+    <label htmlFor='num5'>5</label>
 
-    </li>  <li>
+    </li>
+      <li>
       <input 
       type="radio" 
       name="rating"
-      id='num1'
-      value='1' 
+      id='num5'
+      value='5' 
       onChange={handleChange}
-       checked={selected==1} />
-    <label htmlFor='num1'>1</label>
+       checked={selected==5} />
+    <label htmlFor='num5'>5</label>
 
     </li>  <li>
       <input 
