@@ -11,7 +11,7 @@ const FeedbackForm = () => {
           <button type="submit " >Send</button>
         </div>
       </form>
-      </Card>
+      </Card> 
   )    
 }
 
