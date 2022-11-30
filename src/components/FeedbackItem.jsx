@@ -15,4 +15,4 @@ const FeedbackItem = () => {
   )
 }
 
-export default FeedbackItem
+export default FeedbackItem 
