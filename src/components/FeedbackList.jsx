@@ -8,12 +8,7 @@ const FeedbackList = ({feedback,onAdd}) => {
     return <p>No feedbacks Yet</p>
   }
 
-//   return (
-//     <div className='feedback-list'>
-//      {feedback.map((item)=>(
-//       <FeedbackItem onDelete={onAdd} key={item.id} item={item}/>))}</div>
-//   )
-// }
+
 return (
   <div className='feedback-list'>
     <AnimatePresence>
