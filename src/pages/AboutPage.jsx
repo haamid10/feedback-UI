@@ -1,10 +1,10 @@
-import React from 'react'
 
+import Card from "../components/shared/Card";
 function AboutPage() {
   return (
-    <div>
-      <h1>siuu anouer dahf;djhffhuh</h1>
-    </div>
+    <Card>
+      <h1>About Page</h1>
+    </Card>
   )
 }
 
