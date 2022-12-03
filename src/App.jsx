@@ -37,7 +37,7 @@ const addFeedback = (newFeedback)=>{
       </Route>
  
              <Route path="/about" element= {<AboutPage/>}></Route>
-             <Route path="/post:id" element= {<Post/>}></Route>
+             <Route path="/post/*" element= {<Post/>}></Route>
       </Routes>
      </div>
      <AboutIconLink/>
