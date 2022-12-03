@@ -7,7 +7,7 @@ function AboutPage() {
     <Card>
       <h3>This is React app feedback for product  of service</h3>
       <p>version 1.0.0</p>
-      <Link to="/">back Home</Link>
+      <Link to ="/">back Home</Link>
     </Card>
   )
 }
