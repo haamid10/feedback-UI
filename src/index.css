@@ -178,7 +178,18 @@ input:focus {
   transform: scale(1);
   opacity: 1;
 }
+h1{
+ 
+}
+.header  {
+  text-decoration: none;
+  list-style: none;
+  
+}
+.header h1{
+  color: '#ff6a95';
 
+}
 .message {
   padding-top: 10px;
   text-align: center;

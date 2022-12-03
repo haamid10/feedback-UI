@@ -1,15 +1,20 @@
 import React from 'react'
+import { Link } from "react-router-dom"
+
 
 const Header = ({bgColor,text,textColor}) => {
   const headerStyles ={
     backgroundColor: bgColor,
-    color: textColor
+    color: textColor,
+    
      
   }
+
   return (
     <header style={headerStyles}>
     <div className='container'> 
-     <h1>{text}</h1> 
+    <Link className='header' style={headerStyles} to="/"> <h1>{text}</h1></Link>
+     
     </div>
     </header>
   )
