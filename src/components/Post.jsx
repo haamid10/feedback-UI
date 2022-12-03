@@ -4,6 +4,8 @@ const Post = () => {
   return (
     <div>Post
       <h1>Post{params.id}</h1>
+      <a href="/">back home</a>
+
     </div>
   )
 }

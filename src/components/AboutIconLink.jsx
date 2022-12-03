@@ -10,4 +10,4 @@ const AboutIconLink = () => {
   )
 }
 
-export default AboutIconLink
+export default AboutIconLink 
