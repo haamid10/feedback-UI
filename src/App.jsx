@@ -34,7 +34,7 @@ const addFeedback = (newFeedback)=>{
         <>
             <FeedbackForm onadd={addFeedback}/> 
             <FeedbackStats feedback={feedback}/>
-             <FeedbackList feedback={feedback} onAdd={deleteFeedback}/>
+             <FeedbackList  onAdd={deleteFeedback}/>
         </>
       }> 
     
