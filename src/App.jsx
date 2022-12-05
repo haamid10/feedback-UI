@@ -10,7 +10,7 @@ import AboutPage from './pages/AboutPage'
 import {BrowserRouter as Router, Route,Routes} from 'react-router-dom'
 import Post from "./components/Post";
 
-import FeedbackContext from "./context/FeedbackContext";
+import {FeedbackProvider} from "./context/FeedbackContext";
 
 function App() {
   const [feedback, setFeedback]= useState(FeedbackData)
@@ -26,7 +26,7 @@ const addFeedback = (newFeedback)=>{
   setFeedback([...feedback,newFeedback])
 }
   return ( 
-    <FeedbackContext>
+    <FeedbackProvider>
     <Router>
      <Header/>
      <div className="container">
@@ -47,7 +47,7 @@ const addFeedback = (newFeedback)=>{
      <AboutIconLink/> 
         
     </Router>
-    </FeedbackContext>
+    </FeedbackProvider>
   );
 }
 
