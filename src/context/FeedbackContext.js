@@ -10,10 +10,13 @@ export const FeedbackProvider =({children})=>{
       rating: 10,  
     }
   ])
+
+  
   const deleteFeedback = (id) =>{
     if(window.confirm('Are you sure you went to Delete')){
    setFeedback(feedback.filter((item)=>item.id!==id))}
   }
+
   const addFeedback = (newFeedback)=>{
     // const id= Math.floor(Math.random()*100)+1
     // const newFeedback=[...feedback,id]
