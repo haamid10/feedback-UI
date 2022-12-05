@@ -15,10 +15,7 @@ import {FeedbackProvider} from "./context/FeedbackContext";
 function App() {
   const [feedback, setFeedback]= useState(FeedbackData)
 
-  const deleteFeedback = (id) =>{
-    if(window.confirm('Are you sure you went to Delete')){
-   setFeedback(feedback.filter((item)=>item.id!==id))}
-  }
+ 
 
 const addFeedback = (newFeedback)=>{
   // const id= Math.floor(Math.random()*100)+1
@@ -32,9 +29,9 @@ const addFeedback = (newFeedback)=>{
      <div className="container">
       <Routes>     <Route exact path="/" element={
         <>
-            <FeedbackForm onadd={addFeedback}/> 
-            <FeedbackStats feedback={feedback}/>
-             <FeedbackList  onAdd={deleteFeedback}/>
+            <FeedbackForm /> 
+            <FeedbackStats/>
+             <FeedbackList  />
         </>
       }> 
     
