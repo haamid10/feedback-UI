@@ -1,12 +1,23 @@
 import Card from "./shared/Card"
-import { useContext } from "react"
+import { useContext ,useEffect} from "react"
 import FeedbackContext from "../context/FeedbackContext"
 import RatingSelect from "./RatingSelect" 
 import Button from "./Button"
 import {useState} from 'react'
 
 const FeedbackForm = () => {
-  const{addFeedback}=useContext(FeedbackContext)
+  const{addFeedback,feedbackEdit}=useContext(FeedbackContext)
+
+  useEffect(()=>{
+   console.log('siuu')
+   if(feedbackEdit.edit== true){
+    setBtnDisabled(false)
+    setText(feedbackEdit.item.text)
+    setRating(feedbackEdit.item.rating)
+   }
+  },[feedbackEdit])
+
+
   const [text, setText] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [rating, setRating] = useState(10)
