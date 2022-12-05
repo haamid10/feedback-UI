@@ -1,4 +1,5 @@
 import { useState  } from "react";
+
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./data/FeedbackData";
@@ -8,6 +9,8 @@ import AboutIconLink from "./components/AboutIconLink";
 import AboutPage from './pages/AboutPage'
 import {BrowserRouter as Router, Route,Routes} from 'react-router-dom'
 import Post from "./components/Post";
+
+import FeedbackContext from "./context/FeedbackContext";
 
 function App() {
   const [feedback, setFeedback]= useState(FeedbackData)
@@ -23,6 +26,7 @@ const addFeedback = (newFeedback)=>{
   setFeedback([...feedback,newFeedback])
 }
   return ( 
+    <FeedbackContext>
     <Router>
      <Header/>
      <div className="container">
@@ -40,9 +44,10 @@ const addFeedback = (newFeedback)=>{
              <Route path="/post/*" element= {<Post/>}></Route>
       </Routes>
      </div>
-     <AboutIconLink/>
+     <AboutIconLink/> 
         
     </Router>
+    </FeedbackContext>
   );
 }
 
