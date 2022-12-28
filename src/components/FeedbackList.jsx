@@ -10,7 +10,7 @@ const FeedbackList = () => {
   if(!isLoading&&(!feedback||feedback.length === 0)) {
     return <p>No feedbacks Yet</p>
   }
-  return isLoading ? <Spinner/> : (
+  return isLoading ? <Spinner/>  : (
     <div className='feedback-list'>
     <AnimatePresence>
    {feedback.map((item)=>(
