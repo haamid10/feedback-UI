@@ -6,7 +6,7 @@ import Button from "./Button"
 import {useState} from 'react'
 
 const FeedbackForm = () => {
-  const{addFeedback,feedbackEdit}=useContext(FeedbackContext)
+  const{addFeedback,feedbackEdit,updateFeedback}=useContext(FeedbackContext)
 
   useEffect(()=>{
    console.log('siuu')
@@ -44,8 +44,11 @@ const FeedbackForm = () => {
       rating,
       text,
     }
-    
+    if(feedbackEdit.edit === true ){
+      updateFeedback(feedbackEdit.item.id, newFeedback)
+    }else{
     addFeedback(newFeedback)
+    }
     setText('')
   }
   }
