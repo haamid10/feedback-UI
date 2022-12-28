@@ -3,7 +3,12 @@ import {createContext,useState,useEffect} from 'react'
 const FeedbackContext= createContext()
 
 export const FeedbackProvider =({children})=>{
+  const [isLoading, setIsLoading] = useState(true)
   const [feedback, setFeedback]=useState([])
+  const [feedbackEdit,setEditFeedback] =useState({
+    item:{},
+    edit:false
+  })
 
 
   useEffect (()=>{
@@ -15,13 +20,11 @@ export const FeedbackProvider =({children})=>{
     const data = await res.json()
 
     setFeedback(data)
+    setIsLoading(false)
   }
 
-  const [feedbackEdit,setEditFeedback] =useState({
-    item:{},
-    edit:false
-  })
-  // edit feedback
+ 
+  // edit feedback 
  const editFeedback= (item)=>{
   setEditFeedback({
     item,
@@ -43,12 +46,14 @@ export const FeedbackProvider =({children})=>{
     // const newFeedback=[...feedback,id]
     setFeedback([...feedback,newFeedback])
   }
-  return <FeedbackContext.Provider value={{
+  return <FeedbackContext.Provider 
+  value={{
     feedback,
+    feedbackEdit,
+    isLoading,
     deleteFeedback,
     addFeedback,
     editFeedback,
-    feedbackEdit,
   }}>
     {children}
   </FeedbackContext.Provider>
