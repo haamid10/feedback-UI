@@ -1,4 +1,5 @@
 import {createContext,useState,useEffect} from 'react'
+import { json } from 'react-router-dom'
 
 const FeedbackContext= createContext()
 
@@ -16,14 +17,28 @@ export const FeedbackProvider =({children})=>{
   },[])
 
   const fetchFeedback = async ()=>{
-    const res = await fetch(`http://localhost:5000/feedback?_sort=id&_order=desc`)
+    const res = await fetch(`/feedback?_sort=id&_order=desc`)
     const data = await res.json()
 
     setFeedback(data)
     setIsLoading(false)
   }
 
- 
+
+  // add Feedback
+
+  const addFeedback = async (newFeedback)=>
+  {
+    const b= await fetch('/feedback',
+    {
+      method:"POST",
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(newFeedback)
+    })
+    const data  = await b.json()
+    setFeedback([data,...feedback])  
+  }
+  
   // edit feedback 
  const editFeedback= (item)=>{
   setEditFeedback({
@@ -31,8 +46,6 @@ export const FeedbackProvider =({children})=>{
     edit:true
   })
  }
-//  kkk
-
 // update feedback
  const updateFeedback =(id,updItem)=>{
   console.log(id,updItem)
@@ -40,18 +53,10 @@ export const FeedbackProvider =({children})=>{
   )
 
  }
-
   // delete feedback
   const deleteFeedback = (id) =>{
     if(window.confirm('Are you sure you went to Delete')){
    setFeedback(feedback.filter((item)=>item.id!==id))}
-  }
-
-  // add feedback
-  const addFeedback = (newFeedback)=>{
-    // const id= Math.floor(Math.random()*100)+1
-    // const newFeedback=[...feedback,id]
-    setFeedback([...feedback,newFeedback])
   }
   return <FeedbackContext.Provider 
   value={{
